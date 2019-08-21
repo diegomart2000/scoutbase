@@ -30,14 +30,14 @@ export const GET_COUNTRIES = gql`
   }
 `;
 
-export interface CountryVars {
+export type CountryVars = {
   code: string;
 }
 
-export interface CountryData {
+export type CountryData = {
   country: Country
 }
 
-export interface CountriesData {
+export type CountriesData = {
   countries: Array<Country>
 }
