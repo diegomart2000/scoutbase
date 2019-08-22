@@ -1,7 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 
 const Page = styled.div`
-  padding: 5rem 3rem;
+  padding: 1rem .5rem;
+
+  @media (min-width: 768px) {
+    padding: 5rem 3rem;
+  }
 
   a {
     text-decoration: underline;
@@ -53,15 +57,19 @@ export const Back = styled.span`
 
 const appear = keyframes`
   0% {
-    width: 4px;
+    width: 0;
   }
 
-  33% {
+  25% {
     width: 8px;
   }
 
-  67% {
-    width: 12px;
+  50% {
+    width: 16px;
+  }
+
+  75% {
+    width: 24px;
   }
 `;
 
@@ -70,10 +78,11 @@ export const Loader = styled.div`
   margin-left: 3rem;
 
   :after {
-    content: '...';
+    color: rgba(0,0,0,.54);
+    content: '•••';
     display: inline-block;
     overflow: hidden;
-    animation: ${appear} 1s linear infinite;
+    animation: ${appear} .8s ease infinite;
     margin-left: .25rem;
   }
 `;
